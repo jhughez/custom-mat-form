@@ -1,0 +1,10 @@
+<div class="form-row">
+<ng-signature-pad
+  doneButtonText="Add"
+  format="base64"
+  [editable]="!isDisabled"
+  (done)="showImage($event)">
+</ng-signature-pad>
+<img [src]="signatureImage" *ngIf="signatureImage" />
+</div>
+

@@ -6,19 +6,25 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { InputComponent } from './shared/form-elements/input/input.component';
+import { SignComponent } from './shared/form-elements/sign/sign.component';
+import {SignaturePadModule} from '@ng-plus/signature-pad';
 
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		RegistrationFormComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		ReactiveFormsModule,
-		FontAwesomeModule
-	],
+  declarations: [
+    AppComponent,
+    RegistrationFormComponent,
+    InputComponent,
+    SignComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    SignaturePadModule
+  ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })

@@ -8,30 +8,38 @@
 			Register:
 		</h1>
 
-		<div class="form-row">
-			<label class="form-label" for="name">
-				<span class="is-required">
-					Name
-				</span>
-				<span class="field-error"
-					*ngIf="nameField?.hasError( 'required' )
-						&& nameField?.dirty">
-					This is a required field.
-				</span>
-				<span class="field-error"
-					*ngIf="nameField?.hasError( 'noEmptyString' )
-						&& nameField?.dirty">
-					Please enter a valid name.
-				</span>
-			</label>
-			<input class="form-element" type="text" name="name" id="name"
-		        [ngClass]="{
-		            'has-error':
-		                nameField?.invalid
-		                && nameField?.dirty
-		        }"
-				formControlName="name">
-		</div>
+<!--		<div class="form-row">-->
+<!--			<label class="form-label" for="name">-->
+<!--				<span class="is-required">-->
+<!--					Name-->
+<!--				</span>-->
+<!--				<span class="field-error"-->
+<!--					*ngIf="nameField?.hasError( 'required' )-->
+<!--						&& nameField?.dirty">-->
+<!--					This is a required field.-->
+<!--				</span>-->
+<!--				<span class="field-error"-->
+<!--					*ngIf="nameField?.hasError( 'noEmptyString' )-->
+<!--						&& nameField?.dirty">-->
+<!--					Please enter a valid name.-->
+<!--				</span>-->
+<!--			</label>-->
+<!--			<input class="form-element" type="text" name="name" id="name"-->
+<!--		        [ngClass]="{-->
+<!--		            'has-error':-->
+<!--		                nameField?.invalid-->
+<!--		                && nameField?.dirty-->
+<!--		        }"-->
+<!--				formControlName="name">-->
+<!--		</div>-->
+
+    <app-sign-component
+    formControlName="signature">
+    </app-sign-component>
+
+    <app-input
+    formControlName="name">
+    </app-input>
 
 		<div class="form-row">
 			<label class="form-label" for="email">
