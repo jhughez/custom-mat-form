@@ -2,7 +2,7 @@
 <ng-signature-pad
   doneButtonText="Add"
   format="base64"
-  [editable]="!isDisabled"
+  [editable]="!disabled"
   (done)="showImage($event)">
 </ng-signature-pad>
 <img [src]="signatureImage" *ngIf="signatureImage" />

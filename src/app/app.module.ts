@@ -9,6 +9,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { InputComponent } from './shared/form-elements/input/input.component';
 import { SignComponent } from './shared/form-elements/sign/sign.component';
 import {SignaturePadModule} from '@ng-plus/signature-pad';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {SignaturePadModule} from '@ng-plus/signature-pad';
     AppRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    SignaturePadModule
+    SignaturePadModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
 	providers: [],
 	bootstrap: [ AppComponent ]

@@ -1,5 +1,7 @@
 import {Component, forwardRef} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {MatFormFieldControl} from '@angular/material/form-field';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-sign-component',
@@ -11,15 +13,37 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
       () => SignComponent
     ),
     multi: true
-  }]
+  },
+    {
+      provide: MatFormFieldControl,
+      useExisting: SignComponent
+    }]
 })
-export class SignComponent implements ControlValueAccessor {
+export class SignComponent implements ControlValueAccessor, MatFormFieldControl<any> {
   public signatureImage;
   public changed: (value: string) => void;
   public touched: () => void;
-  public isDisabled: boolean;
 
-  constructor() { }
+  constructor() {
+  }
+
+  value: any;
+    stateChanges = new Subject<void>();
+    id: string;
+    placeholder: string;
+    ngControl: NgControl;
+    focused: boolean;
+    empty: boolean;
+    shouldLabelFloat: boolean;
+    required: boolean;
+    disabled: boolean;
+    errorState: boolean;
+    setDescribedByIds(ids: string[]): void {
+    }
+    onContainerClick(event: MouseEvent): void {
+    }
+
+//*************************************************
 
   writeValue(obj: any): void {
     this.signatureImage = obj;
@@ -33,8 +57,8 @@ export class SignComponent implements ControlValueAccessor {
     this.touched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+  setDisabledState?(disabled: boolean): void {
+    this.disabled = disabled;
   }
 
   showImage(data) {
